@@ -1,4 +1,5 @@
-﻿using BuilderPettern;
+﻿using BridgePattern;
+using BuilderPettern;
 using System;
 
 namespace Demo
@@ -6,6 +7,15 @@ namespace Demo
     class Program
     {
         static void Main(string[] args)
+        {
+            BridgePattern_Test();
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// 建造者模式
+        /// </summary>
+        private static void BuilderPattern_Test()
         {
             var defaultPd = new Product
             {
@@ -16,10 +26,16 @@ namespace Demo
             var bd = new ProductBuilder();
             new ProductHub().Construct(bd,
                 defaultPd,
-                new CombinedProductTemplate { Details = new System.Collections.Generic.List<string> { "abcd" } },
+                null,
                 new VirtualProductTemplate { CardNumber = "B312893718947" });
             Console.WriteLine(defaultPd.CardNumber);
             Console.ReadKey();
+        }
+
+        private static void BridgePattern_Test()
+        {
+            new Log(new DbLog(), "tom", "hello girl").Save();
+            new Log(new FileLog(), "lili", "hello boy").Save();
         }
     }
 }
