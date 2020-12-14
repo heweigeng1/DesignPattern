@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BuilderPettern
 {
-    public class BuilderPetternDemo
+    public class BuilderPatternDemo
     {
         public void Test()
         {

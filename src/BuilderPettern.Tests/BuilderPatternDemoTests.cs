@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BuilderPettern.Tests
 {
-    public class BuilderPetternDemoTests
+    public class BuilderPatternDemoTests
     {
         [Theory(DisplayName = "建造者模式")]
         [InlineData("BN1234567890")]

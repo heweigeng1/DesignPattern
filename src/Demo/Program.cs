@@ -1,5 +1,6 @@
 ﻿using BridgePattern;
 using BuilderPettern;
+using CompositePattern;
 using System;
 
 namespace Demo
@@ -8,7 +9,8 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            BridgePattern_Test();
+            //BridgePattern_Test();
+            CompositePattern_Test();
             Console.ReadKey();
         }
 
@@ -36,6 +38,11 @@ namespace Demo
         {
             new Log(new DbLog(), "tom", "hello girl").Save();
             new Log(new FileLog(), "lili", "hello boy").Save();
+        }
+
+        private static void CompositePattern_Test()
+        {
+            new CompositeDemo().Use();
         }
     }
 }
